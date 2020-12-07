@@ -1,5 +1,37 @@
 Sign your commits!
 
+# Why?
+The author of a commit is not "verifiable"; anyone can specify anyone as the commit author.
+
+For example, this commit was not made by Alex:
+https://github.com/aksel/commit-signing/commit/e57b781554d22b8953b4407af03c836175666da5
+
+It is not a direct security vulnerability (you still have to provide valid GitHub credentials to push).
+
+But it could be an indirect one.
+
+ · A bad actor could gain your trust, by impersonating a trusted user.
+     Sometimes, we have to move and deliver fast. Faster than whatever code quality processes we put into place can allow.
+     Would you read the contents of a single 2000-line commit?
+       What if:
+         · The author was someone you trusted
+         · The commit was made on a Sunday evening
+         · The message is along the lines of "Fix the shit :)"
+     That's a terrible commit, but sometimes you have to fix the shit on a Sunday evening.
+
+ · A bad actor could amend to a previous commit
+     Malicious code could be added to a very early commit, and no one would notice. The timestamp would not even change, as that can _also_ be set to anything.
+     Hopefully, the master branch cannot be force pushed to.
+     But what about the first commit in your current - 35-commit-long - feature branch?
+
+By signing commits, we can verify the authors of commits.
+We can also require that all commits be signed.
+
+As a bonus, your commits also get a nice green "Verified" badge on GitHub :)
+
+# How?
 Here's a tutorial:
 https://withblue.ink/2020/05/17/how-and-why-to-sign-git-commits.html
+
+It is quite straightforward!
 
